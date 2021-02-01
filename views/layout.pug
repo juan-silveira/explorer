@@ -252,7 +252,7 @@ html
       .col-md-4.navbar-nav
         if settings.display.website || settings.display.telegram || settings.display.github ||settings.display.twitter || settings.display.facebook || settings.display.instagram || settings.display.youtube
           ul.nav.justify-content-left
-          if settings.display.website
+            if settings.display.website
               li.pull-left
                 a#website-icon.nav-link.social-link(href="https://lqxcoin.com/"+settings.website, target='_blank')
                   span.glyphicon.fa.fa-globe-americas
@@ -264,11 +264,11 @@ html
               li.pull-left
                 a#facebook-icon.nav-link.social-link(href="https://www.facebook.com/"+settings.facebook, target='_blank')
                   span.glyphicon.fa.fa-facebook
-                  if settings.display.twitter
+            if settings.display.instagram
               li.pull-left
                 a#instagram-icon.nav-link.social-link(href="https://instagram.com/"+settings.instagram, target='_blank')
                   span.glyphicon.fa.fa-instagram
-            if settings.display.facebook
+            if settings.display.telegram
               li.pull-left
                 a#telegram-icon.nav-link.social-link(href="https://t.me/"+settings.telegram, target='_blank')
                   span.glyphicon.fa.fa-telegram
