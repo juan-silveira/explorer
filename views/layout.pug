@@ -254,8 +254,8 @@ html
           ul.nav.justify-content-left
             if settings.display.website
               li.pull-left
-                a#website-icon.nav-link.social-link(href="https://lqxcoin.com/"+settings.website, target='_blank')
-                  span.glyphicon.fa.fa-globe-americas
+                a#website-icon.nav-link.social-link(href="https://"+settings.website, target='_blank')
+                  span.glyphicon.fa.fa-globe
             if settings.display.twitter
               li.pull-left
                 a#twitter-icon.nav-link.social-link(href="https://twitter.com/"+settings.twitter, target='_blank')
@@ -271,7 +271,7 @@ html
             if settings.display.telegram
               li.pull-left
                 a#telegram-icon.nav-link.social-link(href="https://t.me/"+settings.telegram, target='_blank')
-                  span.glyphicon.fa.fa-telegram
+                  span.glyphicon.fa.fa-plane
             if settings.display.github
               li.pull-left
                 a#github-icon.nav-link.social-link(href="https://github.com/"+settings.github, target='_blank')
