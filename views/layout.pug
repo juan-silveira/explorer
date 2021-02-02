@@ -23,6 +23,30 @@ html
     script(src='//cdn.datatables.net/responsive/1.0.1/js/dataTables.responsive.js')
     script(src='//cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js')
     script(src='/javascripts/chart.js')
+
+const axios = require('axios')
+
+const getenabledmn = async () => {
+  try {
+    const url = 'http://149.28.100.117:3005/getApi'
+    let res = await axios.get(url)
+
+    return `${res.data.masternodeCount.result.enabled}`
+  } catch (err) {
+    console.log(err)
+  }
+}
+    script.
+      $(document).ready(function(){
+        $('##{active}').addClass('active');
+        function getenabledmn(){
+          $.ajax({url: 'http://149.28.100.117:3005/getApi', success: function(res){
+            var enabledmn = res.data;
+            $("#enabled").text(enabledmn);
+            }});
+        }});
+
+
     script.
       $(document).ready(function(){
         $('##{active}').addClass('active');
@@ -73,6 +97,7 @@ html
       .header-icons {
         margin: 0 3px;
       }
+
   body
     - function format_unixtime(unixtime) {
       - var a = new Date(unixtime*1000);
@@ -224,23 +249,13 @@ html
                   label )
         .col-md-2
           .card.card-default.d-none.d-md-block.d-block
-            if settings.index.show_market_cap != true || settings.index.show_market_cap_over_price != true
               .card-header
-                strong #{settings.markets.exchange} Price
+                strong Masternodes
               .card-body
-                #pricecard
+                #masternodecard
                   span.header-icons.fa.fa-rocket
-                  if settings.index.difficulty == 'Hybrid'
-                    label#lastPrice -
-                    <br>
-                    label#lblX1
-                  else
-                    label#lastPrice -
-          if settings.index.show_market_cap == true && settings.index.show_market_cap_over_price == true
-            .card-header
-              strong Market Cap
-            .card-body
-              label#marketCap -
+                  label#enabled - 
+                  
 
       .row.text-center(style='margin-top:10px;margin-bottom:20px;')
         form.form-inline.col-12.d-flex.justify-content-center(method='post', action='/search')

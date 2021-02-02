@@ -6,6 +6,7 @@ var express = require('express')
     , lib = require('../lib/explorer')
     , qr = require('qr-image');
 
+
 function route_get_block(res, blockhash) {
   lib.get_block(blockhash, function (block) {
     if (block != 'There was an error. Check your console.') {
