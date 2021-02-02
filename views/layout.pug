@@ -24,18 +24,6 @@ html
     script(src='//cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js')
     script(src='/javascripts/chart.js')
 
-const axios = require('axios')
-
-const getenabledmn = async () => {
-  try {
-    const url = 'http://149.28.100.117:3005/getApi'
-    let res = await axios.get(url)
-
-    return `${res.data.masternodeCount.result.enabled}`
-  } catch (err) {
-    console.log(err)
-  }
-}
     script.
       $(document).ready(function(){
         $('##{active}').addClass('active');
