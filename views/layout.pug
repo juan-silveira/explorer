@@ -27,18 +27,6 @@ html
     script.
       $(document).ready(function(){
         $('##{active}').addClass('active');
-        function getenabledmn(){
-          $.ajax({url: 'http://149.28.100.117:3005/getApi', success: function(res){
-            var enabledmn = res.data;
-            console.log(enabledmn)
-            $("#enabled").text(enabledmn);
-            }});
-        }});
-
-
-    script.
-      $(document).ready(function(){
-        $('##{active}').addClass('active');
         function update_stats(){
           $.ajax({url: '/ext/summary', success: function(json){
             var supplyString = json.data[0].supply;
@@ -236,14 +224,6 @@ html
                   label ( 
                   label#marketCap - 
                   label )
-        .col-md-2
-          .card.card-default.d-none.d-md-block.d-block
-              .card-header
-                strong Masternodes
-              .card-body
-                #masternodecard
-                  span.header-icons.fa.fa-rocket
-                  label#enabled - 
                   
 
       .row.text-center(style='margin-top:10px;margin-bottom:20px;')
