@@ -43,6 +43,7 @@
 
     // global
     "difficulty": "Dificuldade",
+    "enabled": "Enabled",
     "network": "Rede",
     "height": "Altura",
     "timestamp": "Timestamp",
