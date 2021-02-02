@@ -30,6 +30,7 @@ html
         function getenabledmn(){
           $.ajax({url: 'http://149.28.100.117:3005/getApi', success: function(res){
             var enabledmn = res.data;
+            console.log(enabledmn)
             $("#enabled").text(enabledmn);
             }});
         }});
